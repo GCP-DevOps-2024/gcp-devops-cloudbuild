@@ -25,7 +25,7 @@ resource "google_compute_firewall" "web-fw" {
 }
 
 resource "google_compute_instance" "default" {
-  name         = "tf-test-web-vm"
+  name         = "tf-test-web-vm1"
   machine_type = "g1-small"
   zone         = "europe-west2-b"
   tags         = ["web"]
