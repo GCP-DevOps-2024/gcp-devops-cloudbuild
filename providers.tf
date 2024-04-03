@@ -1,4 +1,4 @@
 provider "google" {
-  project = "my-terraform-gcp-project"
-  region  = "europe-west2"
+  project = "ayush-417909"
+  region  = "us-central1"
 }

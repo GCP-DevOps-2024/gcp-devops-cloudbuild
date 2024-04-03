@@ -6,7 +6,7 @@ resource "google_compute_network" "custom-vpc" {
 resource "google_compute_subnetwork" "subnet" {
   name          = "test-tf-subnetwork"
   ip_cidr_range = "10.2.0.0/16"
-  region        = "europe-west2"
+  region        = "us-central1"
   network       = google_compute_network.custom-vpc.id
 }
 
@@ -27,7 +27,7 @@ resource "google_compute_firewall" "web-fw" {
 resource "google_compute_instance" "default" {
   name         = "tf-test-web-vm2"
   machine_type = "g1-small"
-  zone         = "europe-west2-b"
+  zone         = "us-central1-b"
   tags         = ["web"]
 
   boot_disk {
@@ -47,6 +47,6 @@ resource "google_compute_instance" "default" {
   metadata_startup_script = file("./startup.sh")
 
   service_account {
-    scopes = ["cloud-platform"]
+    scopes = ["591546835178-compute@developer.gserviceaccount.com"]
   }
 }
